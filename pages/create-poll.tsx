@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import CreateUser from '../components/CreateUser';
-import PollList from '../components/PollList';
+import CreatePoll from '../components/CreatePoll';
 
-export default function Home() {
+const CreatePollPage = () => {
   const [user, setUser] = useState<string | null>(null);
   const router = useRouter();
 
@@ -11,17 +10,20 @@ export default function Home() {
     const storedUser = sessionStorage.getItem('user');
     if (storedUser) {
       setUser(storedUser);
-      router.push('/polls');
+    } else {
+      router.push('/');
     }
   }, [router]);
 
-  if (user) {
-    return <PollList user={user} />;
+  if (!user) {
+    return <div>Loading...</div>;
   }
 
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <CreateUser />
+      <CreatePoll user={user} />
     </div>
   );
-}
+};
+
+export default CreatePollPage;
