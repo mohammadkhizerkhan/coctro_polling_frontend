@@ -184,10 +184,10 @@ To get a local copy of the project up and running, follow these steps:
 3. a. Set up backend environment variables:
     Create a `.env` file in the root directory with the following content:
     ```env
-    MONGODB_USERNAME=khan
-    MONGODB_PASSWORD=P4f51gqk0JP3bCdr
-    MONGODB_CLUSTER_URL=cluster0.tz1bpqa.mongodb.net
-    MONGODB_DB_NAME=polling_app
+    MONGODB_USERNAME=""
+    MONGODB_PASSWORD=""
+    MONGODB_CLUSTER_URL=""
+    MONGODB_DB_NAME=""
     PORT=3001
     ```
     b. Set up frontend environment variables:
